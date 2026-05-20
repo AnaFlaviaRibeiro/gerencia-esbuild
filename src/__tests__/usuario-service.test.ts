@@ -10,7 +10,7 @@ describe("usuario-service", () => {
   beforeEach(() => limparUsuarios());
 
   it("cria e recupera usuário", () => {
-    const u = criarUsuario("Maria Silva", "maria@exemplo.com");
+    const u = criarUsuario("Maria Silva ", "maria@exemplo.com");
     expect(buscarUsuario(u.id)).toEqual(u);
   });
 
