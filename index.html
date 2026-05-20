@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora — Demo esbuild</title>
+    <link rel="stylesheet" href="dist/bundle.css" />
+  </head>
+  <body>
+    <div id="file-protocol-warning" hidden>
+      <p><strong>Use o servidor local</strong></p>
+      <pre>npm run dev</pre>
+      <p><a href="http://localhost:3000">http://localhost:3000</a></p>
+    </div>
+    <div id="app"></div>
+    <script>
+      if (location.protocol === "file:") {
+        document.getElementById("file-protocol-warning").hidden = false;
+        document.getElementById("app").hidden = true;
+      }
+    </script>
+    <script type="module" src="dist/bundle.js"></script>
+  </body>
+</html>
