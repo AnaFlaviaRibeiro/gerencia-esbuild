@@ -1,0 +1,36 @@
+{
+  "name": "gerencia-build",
+  "version": "1.0.0",
+  "description": "Sistema de build com esbuild — geração de scripts, VCS, recompilação mínima, executável, testes, relatórios e documentação",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "gerencia": "dist/index.js"
+  },
+  "scripts": {
+    "analyze": "node scripts/analyze-deps.mjs",
+    "generate:config": "node scripts/generate-build-config.mjs",
+    "build": "node scripts/build.mjs",
+    "build:watch": "node scripts/build.mjs --watch",
+    "build:clean": "node -e \"import('fs').then(fs=>fs.rmSync('dist',{recursive:true,force:true}))\"",
+    "vcs:sync": "node scripts/vcs-sync.mjs",
+    "test": "node scripts/run-tests.mjs",
+    "test:ci": "node scripts/run-tests.mjs",
+    "report": "node scripts/generate-report.mjs",
+    "docs": "node scripts/generate-docs.mjs",
+    "release-notes": "node scripts/generate-release-notes.mjs",
+    "all": "npm run vcs:sync && npm run build && npm run test:ci && npm run report && npm run docs"
+  },
+  "keywords": ["esbuild", "build-system", "incremental"],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "esbuild": "^0.25.5",
+    "typedoc": "^0.28.5",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

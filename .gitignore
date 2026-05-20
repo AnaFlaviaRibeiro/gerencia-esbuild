@@ -1,0 +1,8 @@
+node_modules/
+dist/
+reports/
+docs/api/
+.build-cache/
+*.log
+.DS_Store
+build.config.mjs.bak
