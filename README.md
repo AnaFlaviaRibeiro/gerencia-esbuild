@@ -10,7 +10,7 @@ Projeto de demonstração que implementa as características clássicas de um **
 | **Integração com VCS** | `npm run vcs:sync` registra commit/branch/tag em `vcs-manifest.json` e atualiza submódulos Git |
 | **Recompilação mínima** | Cache de hashes em `.build-cache/` + contexto incremental do esbuild; só recompila arquivos alterados |
 | **Sistema executável** | Bundle em `dist/index.js` com shebang, permissão de execução e dependências ligadas |
-| **Automação de testes** | Vitest com saída JUnit (`reports/junit.xml`) compatível com ferramentas CI |
+| **Automação de testes** | Vitest com relatório JSON em `reports/vitest-results.json` |
 | **Emissão de relatórios** | `reports/build-report.html`, `consolidated-report.json`, resumo de testes |
 | **Geração de documentação** | TypeDoc em `docs/api/` + `docs/RELEASE_NOTES.md` + índice em `docs/index.html` |
 
@@ -31,7 +31,7 @@ npm run generate:config   # gera build.config.mjs (--force para sobrescrever)
 npm run build             # compila com recompilação mínima
 npm run build:watch       # modo watch (incremental contínuo)
 npm run vcs:sync          # sincroniza metadados Git
-npm run test              # executa testes + junit.xml
+npm run test              # executa testes (Vitest)
 npm run report            # relatório HTML/JSON consolidado
 npm run docs              # documentação API + índice
 npm run release-notes     # notas de lançamento em docs/RELEASE_NOTES.md

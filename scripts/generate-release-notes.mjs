@@ -50,7 +50,7 @@ const notes = `# Notas de lançamento — v${pkg.version}
 
 - Executável: \`${build.saida ?? "dist/index.js"}\`
 - Relatório HTML: \`reports/build-report.html\`
-- JUnit: \`reports/junit.xml\`
+- Testes: \`reports/vitest-results.json\`
 
 ## Arquivos recompilados
 

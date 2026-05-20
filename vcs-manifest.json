@@ -1,0 +1,26 @@
+{
+  "sincronizadoEm": "2026-05-20T18:57:52.292Z",
+  "repositorio": true,
+  "branch": "master",
+  "commit": "4356bdc0a92fc8637894f2f9f1e593328724e63a",
+  "commitCurto": "4356bdc",
+  "tag": null,
+  "autor": null,
+  "dataCommit": "2026-05-20 15:57:46 -0300",
+  "dependencias": [
+    {
+      "name": "esbuild",
+      "source": "npm",
+      "versionField": "devDependencies.esbuild",
+      "versaoFixada": "unknown"
+    },
+    {
+      "name": "vitest",
+      "source": "npm",
+      "versionField": "devDependencies.vitest",
+      "versaoFixada": "unknown"
+    }
+  ],
+  "workingTreeLimpo": true,
+  "submodulosAtualizados": true
+}

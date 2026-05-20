@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Automação de testes com Vitest e saída compatível com JUnit (reports/junit.xml).
+ * Automação de testes com Vitest (relatório JSON em reports/vitest-results.json).
  */
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
@@ -18,8 +18,6 @@ const args = [
   "vitest",
   "run",
   "--reporter=default",
-  `--reporter=junit`,
-  `--outputFile.junit=${path.join(reportsDir, "junit.xml")}`,
   "--reporter=json",
   `--outputFile.json=${path.join(reportsDir, "vitest-results.json")}`,
 ];
@@ -36,8 +34,7 @@ const summary = {
   executadoEm: new Date().toISOString(),
   sucesso: result.status === 0,
   codigoSaida: result.status ?? 1,
-  junit: "reports/junit.xml",
-  json: "reports/vitest-results.json",
+  relatorio: "reports/vitest-results.json",
 };
 
 fs.writeFileSync(

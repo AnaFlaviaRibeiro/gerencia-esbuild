@@ -45,7 +45,7 @@ const manifest = {
   commit: git("rev-parse HEAD"),
   commitCurto: git("rev-parse --short HEAD"),
   tag: git("describe --tags --exact-match 2>/dev/null") || null,
-  autor: git("log -1 --format=%an <%ae>"),
+  autor: git('log -1 --format="%an <%ae>"'),
   dataCommit: git("log -1 --format=%ci"),
   dependencias: dependencies.map((d) => ({
     ...d,

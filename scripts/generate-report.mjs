@@ -91,7 +91,7 @@ const html = `<!DOCTYPE html>
     <h2>Testes automatizados</h2>
     <table>
       <tr><th>Sucesso</th><td class="${testsOk ? "ok" : "fail"}">${testSummary?.sucesso ?? "não executado"}</td></tr>
-      <tr><th>JUnit</th><td><code>reports/junit.xml</code></td></tr>
+      <tr><th>Relatório</th><td><code>reports/vitest-results.json</code></td></tr>
       ${vitest ? `<tr><th>Total</th><td>${vitest.numPassedTests}/${vitest.numTotalTests} aprovados</td></tr>` : ""}
     </table>
   </section>
