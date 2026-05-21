@@ -19,7 +19,6 @@ function render(): void {
   app.innerHTML = `
     <header class="page-header">
       <h1>Calculadora</h1>
-      <p>Demo esbuild · TypeScript empacotado</p>
     </header>
     <div class="calculator" role="application" aria-label="Calculadoraa">
       <div class="display" aria-live="polite">
