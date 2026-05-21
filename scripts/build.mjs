@@ -29,7 +29,7 @@ const common = {
 if (isWatch) {
   const ctx = await esbuild.context(common);
   await ctx.watch();
-  console.log("👀 esbuild em modo watch — altere src/ e salve para recompilar");
+  console.log("👀 watch ativo — edite src/ e salve");
 } else {
   const result = await esbuild.build(common);
   const outputs = Object.keys(result.metafile.outputs);
@@ -39,9 +39,5 @@ if (isWatch) {
     const kb = (info.bytes / 1024).toFixed(2);
     console.log(`   ${file.replace(`${root}/`, "")} (${kb} KB)`);
   }
-  if (isProduction) {
-    console.log("\n✅ Build de produção (minificado)");
-  } else {
-    console.log("\n✅ Build de desenvolvimento (com source maps)");
-  }
+  console.log(isProduction ? "\n✅ Build de produção" : "\n✅ Build de desenvolvimento");
 }

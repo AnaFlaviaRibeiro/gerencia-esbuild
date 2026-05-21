@@ -22,12 +22,14 @@ createServer(async (req, res) => {
 
   try {
     const data = await readFile(file);
-    res.writeHead(200, { "Content-Type": mime[extname(file)] || "text/plain" });
+    res.writeHead(200, {
+      "Content-Type": mime[extname(file)] || "text/plain",
+      "Cache-Control": "no-store",
+    });
     res.end(data);
   } catch {
     res.writeHead(404).end("Not found");
   }
 }).listen(port, () => {
   console.log(`🌐 http://localhost:${port}`);
-  console.log("   Execute npm run build (ou watch) antes de abrir no navegador");
 });

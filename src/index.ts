@@ -21,7 +21,7 @@ function render(): void {
       <h1>Calculadora</h1>
       <p>Demo esbuild · TypeScript empacotado</p>
     </header>
-    <div class="calculator" role="application" aria-label="Calculadora">
+    <div class="calculator" role="application" aria-label="Calculadoraa">
       <div class="display" aria-live="polite">
         <div class="display-expression">${expressionHint}</div>
         <div class="display-value${isError ? " error" : ""}">${shown}</div>
