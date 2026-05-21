@@ -4,6 +4,8 @@ Demonstração prática da ferramenta [esbuild](https://esbuild.github.io/) para
 
 **Site oficial:** https://esbuild.github.io/
 
+**Apresentação (slides + código):** [APRESENTACAO.md](./APRESENTACAO.md)
+
 ## Roteiro da demonstração ao vivo (~5 min)
 
 ```bash
@@ -13,6 +15,7 @@ npm run build          # desenvolvimento (source maps)
 npm run build:prod     # produção (minificado, sem .map)
 npm run watch          # recompila ao salvar
 npm run serve          # http://localhost:3000 (rode build antes)
+npm test               # testes da calculadora
 ```
 
 ### DevTools não abre ou não mostra `src/*.ts`?
@@ -60,9 +63,10 @@ Bundler e transpilador extremamente rápido para JavaScript/TypeScript, escrito 
 
 ### Automação de tarefas
 
-- Scripts npm (`build`, `build:prod`, `watch`, `serve`).
+- Scripts npm (`build`, `build:prod`, `watch`, `serve`, `test`).
 - API `context()` + `watch()` para pipeline de desenvolvimento.
-- Pode ser integrado a testes (ex.: Vitest usa esbuild) e CI com um comando.
+- Testes em `src/calculator.test.ts` (`npm test` usa esbuild para rodar os testes).
+- CI no GitHub Actions: testes + build em cada push/PR.
 
 ### Extensibilidade
 
@@ -82,8 +86,9 @@ Bundler e transpilador extremamente rápido para JavaScript/TypeScript, escrito 
 gerencia-esbuild/
 ├── src/
 │   ├── index.ts        # UI da calculadora
-│   ├── calculator.ts   # lógica (+ − × ÷)
-│   └── styles.css      # estilos (bundled pelo esbuild)
+│   ├── calculator.ts       # lógica (+ − × ÷)
+│   ├── calculator.test.ts  # testes automatizados
+│   └── styles.css          # estilos (bundled pelo esbuild)
 ├── scripts/
 │   ├── build.mjs     # configuração do esbuild
 │   └── serve.mjs     # servidor estático para demo

@@ -8,7 +8,8 @@
     "build:prod": "node scripts/build.mjs --production",
     "watch": "node scripts/build.mjs --watch",
     "serve": "node scripts/serve.mjs",
-    "dev": "npm run build && node scripts/serve.mjs"
+    "dev": "npm run build && node scripts/serve.mjs",
+    "test": "node scripts/test.mjs"
   },
   "devDependencies": {
     "esbuild": "^0.25.0"
