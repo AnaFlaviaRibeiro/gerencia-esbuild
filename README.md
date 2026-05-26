@@ -1,5 +1,9 @@
 # esbuild — Seminário: Ferramentas de Build
 
+[![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml)
+
+[![Coverage](https://img.shields.io/badge/coverage-unknown-lightgrey.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml)
+
 Demonstração prática da ferramenta [esbuild](https://esbuild.github.io/) para o seminário *Explorando Ferramentas de Build*.
 
 **Site oficial:** https://esbuild.github.io/
@@ -14,6 +18,16 @@ npm run build:prod     # produção (minificado, sem .map)
 npm run watch          # recompila ao salvar
 npm run serve          # http://localhost:3000 (rode build antes)
 ```
+
+## Materiais do seminário
+
+O PDF da apresentação está incluído no repositório: `seminários_ferramentas_build.pdf`.
+
+## Novos comandos úteis
+
+- `npm run test` — executa os testes unitários com Vitest.
+- `npm run analyze` — gera `docs/BUILD_REPORT.md` a partir do arquivo `dist/metafile.json`.
+
 
 ### DevTools não abre ou não mostra `src/*.ts`?
 
