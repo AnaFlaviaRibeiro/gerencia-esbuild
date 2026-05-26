@@ -1,5 +1,5 @@
 import * as esbuild from "esbuild";
-import { mkdir } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -32,6 +32,10 @@ if (isWatch) {
   console.log("👀 watch ativo — edite src/ e salve");
 } else {
   const result = await esbuild.build(common);
+  // persist metafile for analysis
+  if (result.metafile) {
+    await writeFile(`${outdir}/metafile.json`, JSON.stringify(result.metafile, null, 2));
+  }
   const outputs = Object.keys(result.metafile.outputs);
   console.log("\n📦 Artefatos gerados:");
   for (const file of outputs) {

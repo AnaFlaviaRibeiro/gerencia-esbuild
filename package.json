@@ -8,9 +8,18 @@
     "build:prod": "node scripts/build.mjs --production",
     "watch": "node scripts/build.mjs --watch",
     "serve": "node scripts/serve.mjs",
-    "dev": "npm run build && node scripts/serve.mjs"
+    "dev": "npm run build && node scripts/serve.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "analyze": "node scripts/analyze-bundle.mjs",
+    "docs": "typedoc --out docs/api src/calculator.ts"
   },
   "devDependencies": {
-    "esbuild": "^0.25.0"
+    "@types/node": "^18.0.0",
+    "@vitest/coverage-v8": "^1.6.1",
+    "esbuild": "^0.25.0",
+    "typedoc": "^0.24.8",
+    "vitest": "^1.2.0"
   }
 }
