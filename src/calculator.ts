@@ -8,7 +8,7 @@ export class Calculator {
 
   getDisplay(): string {
     return this.display;
-  }
+
 
   inputDigit(digit: string): void {
     if (this.fresh) {
